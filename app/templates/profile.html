@@ -1,0 +1,10 @@
+HELLO {{user.username}}
+<h1>Wish List</h1>
+{% for book in user.wish_list %}
+    {{ book.book_name }} <br> <form action="{{ url_for('delete_book', book=book.book_name) }}" method=post class=delete-book>
+                                <input type=hidden value="{{ book.book_name }}"name="book_to_delete"></input>
+                                <input type=submit value="Delete"></input>
+                              </form>
+{% endfor %}
+
+test
